@@ -25,5 +25,5 @@ public class GreetingTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    // Write a test for good morning 
+    // Write a test for good morning
 }
