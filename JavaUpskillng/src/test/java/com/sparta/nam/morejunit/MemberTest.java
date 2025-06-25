@@ -20,6 +20,7 @@ public class MemberTest {
     // @BeforeEach - methods with this attribute will run before EACH test method
     // @AfterEach - methods wtih this attribute will run AFTER each test method
     private Member sut;
+
     @BeforeEach
     public void setUp(){
         //Arrange
