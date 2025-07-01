@@ -3,15 +3,17 @@ package com.sparta.nam.basics;
 public class Main {
 
     public static void main(String[] args) {
-       int timeOfDay = 21;
-       String result = greeting(timeOfDay);
-        System.out.println(result);
+       int timeOfDay = 22;
+       try {
+           String result = greeting(timeOfDay);
+           System.out.println(result);
+       }catch(IllegalArgumentException e){
+           System.out.println("Caught exception: " + e);
+           System.out.println("Message: " + e.getMessage());
+       }finally {
+           System.out.println("I am always run!");
+       }
 
-        int sum = add(3,4);
-        System.out.println(sum);
-
-        String hello = sayHello("Nish");
-        System.out.println("Hello");
     }
 
     public static Integer add(int num1, int num2){
@@ -23,6 +25,10 @@ public class Main {
         return "Hello " + name;
     }
     public static String greeting(int timeOfDay) {
+        if(timeOfDay < 0 || timeOfDay > 23){
+            throw new IllegalArgumentException("Must be 0-23");
+        }
+
         if(timeOfDay >= 5 && timeOfDay <12 ){
             return "Good morning!";
         } else if (timeOfDay >= 12 && timeOfDay <=18){

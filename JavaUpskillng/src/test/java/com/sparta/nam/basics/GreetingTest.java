@@ -25,5 +25,14 @@ public class GreetingTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    // Write a test for good morning
+    @Test
+    @DisplayName("ExceptionTests")
+    public void greeting_throwsException_invalidInput(){
+        // Arrange
+        int time = -1;
+        // Act - call method under test
+        // Assert
+        var exception = Assertions.assertThrows(IllegalArgumentException.class, ()-> Main.greeting(time));
+        Assertions.assertEquals("Must be 0-23", exception.getMessage());
+    }
 }

@@ -2,7 +2,6 @@ package com.sparta.nam.basics;
 
 import com.sparta.nam.oop.BaseballMember;
 import com.sparta.nam.oop.Member;
-import io.cucumber.java.sl.In;
 
 import java.util.*;
 
