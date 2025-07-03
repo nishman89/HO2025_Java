@@ -10,13 +10,16 @@ import static net.thucydides.model.environment.SystemEnvironmentVariables.create
 
 public class CommonSteps {
 
-    @Given("I am using the postcodes API")
-    public void iAmUsingThePostcodesAPI() {
-        given().baseUri(createEnvironmentVariables().getProperty("postcode.api.url"));
+
+    @Given("I am using the postcodes API with the end point {string}")
+    public void iAmUsingThePostcodesAPIWithTheEndPoint(String endpoint) {
+        given().baseUri(createEnvironmentVariables().getProperty("postcode.api.url") + endpoint);
         // given().baseUri("https://api.postcodes.io/postcodes/");
     }
     @Then("I should get a {int} response code")
     public void iShouldGetAResponseCode(int code) {
         then().statusCode(code);
     }
+
+
 }

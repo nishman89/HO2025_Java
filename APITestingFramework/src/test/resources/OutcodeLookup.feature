@@ -4,7 +4,7 @@ Feature: Outcode Lookup
   So that I can get location details for any UK outcode
 
   Background:
-    Given I am using the postcodes API
+    Given I am using the postcodes API with the end point "outcodes/"
 
   @Happy
   Scenario: Look up a valid London outcode

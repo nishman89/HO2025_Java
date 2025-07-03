@@ -31,4 +31,12 @@ public class PostcodeLookupSteps {
         assertThat(response.getResult().getRegion(), equalTo(expected));
         then().body("result.region",equalTo(expected));
     }
+
+
+    @And("the postcode should match the UK format")
+    public void thePostcodeShouldMatchTheUKFormat() {
+        String postcode = then().extract().path("result.postcode");
+        String postcodeRegex = "^[A-Z]{1,2}[0-9]{1,2}[A-Z]?(\\s*[0-9][A-Z]{1,2})?$";
+        assertThat(postcode.matches(postcodeRegex), is(true));
+    }
 }
