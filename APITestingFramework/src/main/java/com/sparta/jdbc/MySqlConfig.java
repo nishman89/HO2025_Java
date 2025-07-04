@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+
+// Code loads information from the properties file
 public class MySqlConfig {
     private static final Properties properties = new Properties();
 
